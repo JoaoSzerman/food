@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:food/utils/app_routes.dart';
 import '../models/meal.dart';
 

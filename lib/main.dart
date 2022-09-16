@@ -4,8 +4,6 @@ import 'package:food/screens/categories_screen.dart';
 import 'package:food/screens/meal_detail_screen.dart';
 import 'package:food/utils/app_routes.dart';
 
-import 'models/category.dart';
-
 void main() {
   runApp(const MyApp());
 }
