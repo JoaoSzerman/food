@@ -45,6 +45,13 @@ class MyApp extends StatelessWidget {
           );
         }
       },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (_) {
+            return const CategoriesScreen();
+          },
+        );
+      },
     );
   }
 }
