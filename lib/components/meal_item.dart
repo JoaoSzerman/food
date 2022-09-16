@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({Key? key}) : super(key: key);
+  final Meal meal;
+
+  const MealItem({
+    Key? key,
+    required this.meal,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card();
+    return Card(
+      child: Text(meal.title),
+    );
   }
 }
