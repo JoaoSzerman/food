@@ -15,8 +15,8 @@ class _TabsScreenState extends State<TabsScreen> {
   int _selectedScreenIndex = 0;
 
   final List<Map<String, Object>> _screen = [
-    {'title': 'Lista de categorias', 'screen': CategoriesScreen()},
-    {'title': 'Meu favoritos', 'screen': FavoriteScreen()}
+    {'title': 'Lista de categorias', 'screen': const CategoriesScreen()},
+    {'title': 'Meu favoritos', 'screen': const FavoriteScreen()}
   ];
 
   _selectScreen(int index) {
@@ -33,11 +33,12 @@ class _TabsScreenState extends State<TabsScreen> {
           _screen[_selectedScreenIndex]['title'] as String,
         ),
       ),
+      drawer: Drawer(),
       body: _screen[_selectedScreenIndex]['screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
-        selectedItemColor: Theme.of(context).errorColor,
-        backgroundColor: Theme.of(context).primaryColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Colors.white,
         currentIndex: _selectedScreenIndex,
         items: const [

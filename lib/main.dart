@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Vamos Cozinhar!',
+      darkTheme: ThemeData.dark(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
             .copyWith(secondary: Colors.amber),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
       //     );
       //   }
       // },
+
       // onUnknownRoute: (settings) {
       //   return MaterialPageRoute(
       //     builder: (_) {
