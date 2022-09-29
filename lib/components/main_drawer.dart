@@ -7,6 +7,25 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer();
+    return Drawer(
+      child: Column(
+        children: [
+          Container(
+            height: 120,
+            width: double.infinity,
+            padding: EdgeInsets.all(20),
+            color: Theme.of(context).colorScheme.secondary,
+            alignment: Alignment.bottomRight,
+            child: Text(
+              "Vamos cozinhar?",
+              style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 30,
+                  color: Theme.of(context).colorScheme.primary),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
