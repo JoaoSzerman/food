@@ -1,10 +1,10 @@
-class Setting {
+class Settings {
   bool isGlutenFree;
   bool isLactoseFree;
   bool isVegan;
   bool isVegetarian;
 
-  Setting({
+  Settings({
     this.isGlutenFree = false,
     this.isLactoseFree = false,
     this.isVegan = false,
