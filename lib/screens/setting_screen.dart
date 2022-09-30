@@ -6,6 +6,20 @@ import 'package:food/components/main_drawer.dart';
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
 
+  Widget _createSwitch(
+    String title,
+    String subtitle,
+    bool value,
+    onChanged,
+  ) {
+    return SwitchListTile(
+      title: Text(title),
+      subtitle: Text(subtitle),
+      value: value,
+      onChanged: onChanged,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
