@@ -6,14 +6,27 @@ import 'package:food/components/main_drawer.dart';
 import '../models/setting.dart';
 
 class SettingScreen extends StatefulWidget {
-  const SettingScreen({Key? key}) : super(key: key);
+  SettingScreen({
+    Key? key,
+    required this.onSettingsChanged,
+    required this.settings,
+  }) : super(key: key);
+
+  var settings = Settings();
+  final Function(Settings) onSettingsChanged;
 
   @override
   State<SettingScreen> createState() => _SettingScreenState();
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  var settings = Settings();
+  late Settings settings;
+
+  @override
+  void initState() {
+    settings = widget.settings;
+    super.initState();
+  }
 
   Widget _createSwitch(
     String title,
@@ -25,7 +38,10 @@ class _SettingScreenState extends State<SettingScreen> {
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onChanged,
+      onChanged: (value) {
+        onChanged(value);
+        widget.onSettingsChanged(settings);
+      },
     );
   }
 
